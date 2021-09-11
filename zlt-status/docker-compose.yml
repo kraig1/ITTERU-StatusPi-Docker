@@ -1,0 +1,42 @@
+version: "3"
+services:
+  redis_db:
+    image: redis:latest
+
+  webserver:
+    build: .
+    working_dir: /zlt-status
+    command: python3 webserver.py
+    ports:
+      - 8080:8080
+    links:
+      - redis_db
+    environment:
+      - REDIS_URL=redis://redis_db
+
+  ups_status:
+    build: .
+    working_dir: /zlt-status
+    command: python3 ups_status.py
+    links:
+      - redis_db
+    environment:
+      - REDIS_URL=redis://redis_db
+
+  check_vms:
+    build: .
+    working_dir: /zlt-status
+    command: python3 check_vms.py
+    links:
+      - redis_db
+    environment:
+      - REDIS_URL=redis://redis_db
+
+  poll_nodes:
+    build: .
+    working_dir: /zlt-status
+    command: python3 poll_nodes.py
+    links:
+      - redis_db
+    environment:
+      - REDIS_URL=redis://redis_db

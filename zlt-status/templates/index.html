@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <link rel="icon" href="static/favicon.ico">
+
+    <title>ZLT Status</title>
+
+    <link href="static/css/bootstrap.min.css" rel="stylesheet">
+    <link href="static/css/fontawesome-all.min.css" rel="stylesheet">
+    <link href="static/css/zlt-theme.css" rel="stylesheet">
+    <link href="static/css/zlt-extras.css" rel="stylesheet">
+    <script type="text/javascript" src="static/js/socket.io.min.js"></script>
+    <script type="text/javascript" src="static/js/jquery-3.2.1.min.js"></script>
+    <script defer type="text/javascript" src="static/js/fontawesome.min.js"></script>
+    <script defer type="text/javascript" src="static/js/bootstrap.min.js"></script>
+    <script defer type="text/javascript" src="static/js/zlt-js.js"></script>
+
+
+    <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+    <!--[if lt IE 9]>
+      <script src="https://oss.maxcdn.com/html5shiv/3.7.3/html5shiv.min.js"></script>
+      <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+    <![endif]-->
+  </head>
+
+  <body>
+
+    <nav class="navbar navbar-inverse">
+        <div class="navbar-header">
+          <a class="navbar-brand navbar-left" href="#">Tonga Red Cross - ZLT Status</a>
+          <img src="static/img/eru-logo.png">
+        </div>
+    </nav>
+    <div class="container" id="status">
+      <div id="overview" class="row">
+
+        <div id="overview-network" class="col-md-4">
+          <div class="jumbotron">
+            <h1>Network <i class="fa fa-spinner pull-right fa-pulse"></i></h1>
+            <p>Loading...</p>
+          </div>
+          <table class="table" id="network-status-table">
+            <tbody>
+            </tbody>
+          </table>
+        </div>
+
+        <div id="overview-vms" class="col-md-4">
+          <div class="jumbotron">
+            <h1>Servers<i class="fa fa-spinner pull-right fa-pulse"></i></h1>
+            <p>Loading...</p>
+          </div>
+          <table class="table" id="vm-status-table">
+            <tbody>
+            </tbody>
+          </table>
+        </div>
+
+        <div id="overview-environment" class="col-md-4">
+          <div class="jumbotron">
+            <h1>Environment <i class="fa fa-spinner pull-right fa-pulse"></i></h1>
+            <p>Loading...</p>
+          </div>
+          <div class="detail hidden">
+            <div class="col-md-6">
+              <div class="" id="temp">
+                <h3><i class="fa fa-thermometer-half pull-right"></i><span></span></h3>
+              </div>
+            </div>
+            <div class="col-md-6">
+              <div class="" id="humidity">
+                <h3><i class="fa fa-tint pull-right"></i><span></span></h3>
+              </div>
+            </div>
+
+            <div class="col-md-6 ">
+              <div class="" id="battery_status">
+                <h3><i class="fa fa-plug pull-right"></i><span></span></h3>
+              </div>
+            </div>
+            <div class="col-md-6">
+              <div class="" id="battery_capacity">
+                <h3><i class="fa fa-battery-full pull-right"></i><span></span></h3>
+              </div>
+            </div>
+            <div class="col-md-6">
+              <div class="" id="runtime">
+                <h3><i class="fa fa-clock pull-right"></i><span></span></h3>
+              </div>
+            </div>
+            <div class="col-md-6">
+              <div class="" id="load">
+                <h3><i class="fa fa-truck-loading pull-right"></i><span></span></h3>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="container hidden" id="shutdown">
+      <div class="jumbotron">
+        <h1>Shutting down...<i class="fa fa-power-off pull-right"></i></h1>
+        <p>Shutdown of the ZLT system has been initiated. After all system processes have stopped the ZLT will power off.</p>
+        <center>
+          <span class="countdown"></div>
+        </center>
+
+    </div>
+  </body>
+</html>

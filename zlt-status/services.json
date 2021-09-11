@@ -1,0 +1,70 @@
+{
+    "firewall": [
+      {
+      "hostname": "rc-xxx-fw01",
+        "ip_address": "10.50.1.1",
+        "healthcheck": "ping"
+      }
+    ],
+    "switch": [
+      {
+        "hostname": "rc-xxx-sw01",
+        "ip_address": "10.50.1.2",
+        "healthcheck": "ping"
+      },
+      {
+        "hostname": "rc-xxx-sw02",
+        "ip_address": "10.50.1.3",
+        "healthcheck": "ping"
+      }
+    ],
+    "ups": [
+      {
+        "hostname":"rc-xxx-ups01",
+        "ip_address": "10.50.1.13",
+        "snmp_community": "public",
+        "snmp_version": "1",
+        "healthcheck": "ping"
+      }
+    ],
+
+    "pdu":[
+      {
+        "hostname":"rc-xxx-pdu01",
+        "ip_address": "10.50.1.5",
+        "healthcheck": "ping"
+      }
+    ],
+    "router": [
+      {
+        "hostname": "rc-xxx-mk3g01",
+        "ip_address": "10.50.1.6",
+        "healthcheck": "ping"
+      }
+    ],
+    "vmware-server": [
+      {
+        "hostname": "rc-xxx-esx01",
+        "ip_address": "10.50.1.8",
+        "username": "root",
+        "password": "password",
+        "healthcheck": "vmware-host"
+      }
+    ],
+    "vcenter": [
+      {
+        "hostname": "rc-xxx-vcsa",
+        "ip_address": "10.50.1.8",
+        "username": "administrator@vsphere.local",
+        "password": "password",
+        "healthcheck": "vcenter"
+      }
+    ],
+    "server": [
+      {
+        "hostname": "rc-xxx-ilo01",
+        "ip_address": "10.50.1.7",
+        "healthcheck": "ping"
+      }
+    ]
+}
